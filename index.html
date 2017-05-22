@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridget</title>
+  <link rel="stylesheet" href="css/css-reset.css" />
+  <script src="https://use.fontawesome.com/9add800826.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+
+<body ng-app="bridget-app">
+  <main>
+    <div ng-controller="BridgetController">
+      <figure class="bridget">
+          <img ng-src="{{ face }}" alt="Betty" />
+          <figcaption>
+            Bridget
+          </figcaption>
+          <div>
+            Thank You, Bridget
+          </div>
+          <div>
+            Are you sure?
+          </div>
+          <div>
+            I think you're wrong
+          </div>
+      </figure>
+      <div class="bridget-talk">
+        <span>{{ greeting }}</span>
+        <div class="bridget-act">
+          <div ng-click="updateBridget('normal_smile', 'helpful_affirm')">
+            Make Happy
+          </div>
+          <div ng-click="updateBridget('sad', 'sarcastic_negative')">
+            Make Sad
+          </div>
+          <div ng-click="updateBridget('angry', 'angry_negative')">
+            Make Angry
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/controllers/BridgetController.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+figure {
+  width: 400px;
+  float: left;
+}
+figcaption {
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  background: #999;
+}
+figure div {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+.bridget-talk {
+   width: 374px;
+   height: auto;
+   color: white;
+   float: left;
+   font-size: 20px;
+   background: #5F8528;
+   position: relative;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+   padding: 15px;
+}
+.bridget-talk:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 12px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid #5F8528;
+   border-bottom: 13px solid transparent;
+}
+.bridget-act {
+  margin: 10px auto 0 auto;
+}
+.bridget-act > div {
+  cursor: pointer;
+  height: auto;
+  width: 300px;
+  padding: 5px;
+  margin: 3px auto;
+  border: 2px solid #f90;
+  text-align: center;
+  font-size: 18px;
+}
