@@ -1,3 +1,3 @@
-app.controller('BudgetController',['$scope', function($scope) {
-  $scope.title = 'Budget'
+app.controller('BudgetController',['$scope','$rootScope', function($scope, $rootScope) {
+  $scope.title = 'Budget';
 }]);

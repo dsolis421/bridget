@@ -1,4 +1,4 @@
-app.controller('BridgetController', ['$scope', function($scope) {
+app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $rootScope) {
   $scope.greeting = "Hi, I\'m Bridget and all I do is budget! How can I help you today?";
   $scope.face = 'img/bettie_normal.png';
   $scope.looks = {
@@ -38,5 +38,13 @@ app.controller('BridgetController', ['$scope', function($scope) {
   $scope.updateBridget = function(look, response) {
     $scope.face = $scope.looks[look];
     $scope.greeting = $scope.responses[response];
+  };
+  $scope.showBudget = function() {
+    $rootScope.budget = true;
+    $rootScope.mortgage = false;
+  };
+  $scope.showMortgage = function() {
+    $rootScope.budget = false;
+    $rootScope.mortgage = true;
   };
 }]);

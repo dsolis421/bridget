@@ -1,3 +1,3 @@
-app.controller('MortgageController',['$scope', function($scope) {
-  $scope.title = 'Mortgage'
+app.controller('MortgageController',['$scope', function($scope, $rootScope) {
+  $scope.title = 'Mortgage';
 }]);
