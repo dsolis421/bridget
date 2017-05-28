@@ -20,6 +20,17 @@
           <img ng-src="{{ face }}" alt="Betty" />
           <figcaption>
             Bridget
+            <div class="bridget-talk">
+              <span>{{ greeting }}</span>
+              <div class="bridget-act">
+                <div ng-click="showBudget()">
+                  Calculate Monthly Budget
+                </div>
+                <div ng-click="showMortgage()">
+                  Calculate Mortgage Payment
+                </div>
+              </div>
+            </div>
           </figcaption>
           <div>
             Thank You, Bridget
@@ -31,23 +42,37 @@
             I think you're wrong
           </div>
       </figure>
-      <div class="bridget-talk">
-        <span>{{ greeting }}</span>
-        <div class="bridget-act">
-          <div ng-click="showBudget()">
-            Calculate Monthly Budget
-          </div>
-          <div ng-click="showMortgage()">
-            Calculate Mortgage Payment
-          </div>
-        </div>
+    </div>
+    <div class="app-main">
+      <div ng-if="$root.budget" ng-controller="BudgetController">
+        <h1>{{ title }}</h1>
       </div>
-    </div>
-    <div ng-if="$root.budget" ng-controller="BudgetController">
-      <h1>{{ title }}</h1>
-    </div>
-    <div ng-if="$root.mortgage" ng-controller="MortgageController">
-      <h1>{{ title }}</h1>
+      <div ng-if="$root.mortgage" ng-controller="MortgageController">
+        <h1>{{ title }}</h1>
+        <form>
+          <label name="amount">Loan Amount</label>
+          <input type="number"
+            name="amount"
+            ng-model="amount"
+            ng-change="mortgageChange()"
+            placeholder=0.00 />
+          <label name="rate">Rate</label>
+          <input
+            type="number"
+            name="rate"
+            ng-model="rate"
+            ng-change="mortgageChange()"
+            placeholder=0.00 />
+          <label name="term">Term</label>
+          <input
+            type="number"
+            name="term"
+            ng-model="term"
+            ng-change="mortgageChange()"
+            placeholder=30 />
+          <h3 ng-if="payment">{{ payment | currency }}</h3>
+        </form>
+      </div>
     </div>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

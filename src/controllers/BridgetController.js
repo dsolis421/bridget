@@ -33,7 +33,8 @@ app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $r
     bad_ratio: "Your debt is high compared to your income. I would strongly recommend you pay down some of your debt.",
     thankyou: "Thank you!",
     yourewelcome: "You're very welcome",
-    imsorry: "I'm sorry"
+    imsorry: "I'm sorry",
+    mortgage_response: "I can estimate a monthly mortgage payment if you can provide the loan amount, the interest rate, and the loan term (in years)"
   };
   $scope.updateBridget = function(look, response) {
     $scope.face = $scope.looks[look];
@@ -42,9 +43,11 @@ app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $r
   $scope.showBudget = function() {
     $rootScope.budget = true;
     $rootScope.mortgage = false;
+    $scope.updateBridget('normal_smile','helpful_affirm');
   };
   $scope.showMortgage = function() {
     $rootScope.budget = false;
     $rootScope.mortgage = true;
+    $scope.updateBridget('normal_smile','mortgage_response');
   };
 }]);
