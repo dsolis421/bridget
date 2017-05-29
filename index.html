@@ -9,71 +9,87 @@
   <link rel="stylesheet" href="css/css-reset.css" />
   <script src="https://use.fontawesome.com/9add800826.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Life+Savers" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 </head>
 
 <body ng-app="bridget-app">
   <main>
-    <div ng-controller="BridgetController">
-      <figure class="bridget">
-          <img ng-src="{{ face }}" alt="Betty" />
-          <figcaption>
-            Bridget
-            <div class="bridget-talk">
-              <span>{{ greeting }}</span>
-              <div class="bridget-act">
-                <div ng-click="showBudget()">
-                  Calculate Monthly Budget
-                </div>
-                <div ng-click="showMortgage()">
-                  Calculate Mortgage Payment
+    <header>
+      <div>
+        <h1>Bridget</h1>
+      </div>
+    </header>
+    <section class="clearfix">
+      <div ng-controller="BridgetController">
+        <figure class="bridget">
+            <img ng-src="{{ face }}" alt="Bridget" />
+            <figcaption>
+              <div class="bridget-talk">
+                <span>{{ greeting }}</span>
+                <div class="bridget-act">
+                  <div ng-click="showBudget()">
+                    Calculate Monthly Budget
+                  </div>
+                  <div ng-click="showMortgage()">
+                    Estimate Mortgage Payment
+                  </div>
                 </div>
               </div>
+            </figcaption>
+            <div class="bridget-reply">
+              Thank You, Bridget
             </div>
-          </figcaption>
-          <div>
-            Thank You, Bridget
-          </div>
-          <div>
-            Are you sure?
-          </div>
-          <div>
-            I think you're wrong
-          </div>
-      </figure>
-    </div>
-    <div class="app-main">
-      <div ng-if="$root.budget" ng-controller="BudgetController">
-        <h1>{{ title }}</h1>
+            <div class="bridget-reply">
+              Are you sure?
+            </div>
+            <div class="bridget-reply">
+              I think you're wrong
+            </div>
+        </figure>
       </div>
-      <div ng-if="$root.mortgage" ng-controller="MortgageController">
-        <h1>{{ title }}</h1>
-        <form>
-          <label name="amount">Loan Amount</label>
-          <input type="number"
-            name="amount"
-            ng-model="amount"
-            ng-change="mortgageChange()"
-            placeholder=0.00 />
-          <label name="rate">Rate</label>
-          <input
-            type="number"
-            name="rate"
-            ng-model="rate"
-            ng-change="mortgageChange()"
-            placeholder=0.00 />
-          <label name="term">Term</label>
-          <input
-            type="number"
-            name="term"
-            ng-model="term"
-            ng-change="mortgageChange()"
-            placeholder=30 />
-          <h3 ng-if="payment">{{ payment | currency }}</h3>
-        </form>
+      <div class="app-main">
+        <div ng-if="$root.budget" ng-controller="BudgetController">
+          <h1>{{ title }}</h1>
+        </div>
+        <div ng-if="$root.mortgage" ng-controller="MortgageController">
+          <h1>{{ title }}</h1>
+          <form>
+            <label name="amount">Loan Amount</label>
+            <input type="number"
+              name="amount"
+              ng-model="amount"
+              ng-change="mortgageChange()"
+              placeholder=0.00 />
+            <label name="rate">Rate</label>
+            <input
+              type="number"
+              name="rate"
+              ng-model="rate"
+              ng-change="mortgageChange()"
+              placeholder=0.00 />
+            <label name="term">Term</label>
+            <input
+              type="number"
+              name="term"
+              ng-model="term"
+              ng-change="mortgageChange()"
+              placeholder=30 />
+            <div ng-if="payment">
+              <p>
+                I estimate your monthly mortgage payment to be <span>{{ payment | currency }}</span>.  Keep in mind,
+                your payment can increase depending on insurance premiums, HOA fees, and property taxes.
+              </p>
+              <p>
+                You can decrease your mortage payment with a sizeable downpayment.  Improving your credit can also decrease
+                your payment by helping you qualify for a lower rate.
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

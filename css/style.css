@@ -2,6 +2,20 @@ body {
   width: 800px;
   margin: 0 auto;
 }
+header {
+  width: 100%;
+  height: auto;
+  font-family: 'Life Savers', cursive;
+  text-align: center;
+  background: #5F8528;
+  color: white;
+  padding: 2px;
+}
+section {
+  width: 100%;
+  height: auto;
+  background: #ffcc66;
+}
 figure, .app-main {
   width: 400px;
   height: auto;
@@ -14,14 +28,16 @@ figcaption {
   text-align: center;
   padding: 10px;
   font-size: 30px;
-  background: #999;
+  background: #C66854;
+}
+.bridget {
+  background: white;
 }
 .bridget-talk {
    width: 100%;
    height: auto;
    color: white;
    font-size: 20px;
-   background: #5F8528;
    padding: 15px;
 }
 .bridget-act {
@@ -33,19 +49,50 @@ figcaption {
   width: 300px;
   padding: 5px;
   margin: 3px auto;
-  border: 2px solid #f90;
+  background: #A83C25;
   text-align: center;
   font-size: 18px;
 }
+.bridget-reply {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  background: #5F8528;
+  color: white;
+  cursor: pointer;
+  margin: 3px auto;
+}
 .app-main {
+  width: 400px;
+  height: auto;
   padding: 15px;
+  font-size: 18px;
+  background: #ffcc66;
 }
 input {
   display: block;
-  height: 30px;
+  width: 200px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 18px;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  padding-left: 10px;
+}
+.app-main p:first-of-type {
+  margin-top: 15px;
+}
+.app-main span {
+  text-decoration: underline;
+  color: #A83C25;
+  font-weight: bold;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  opacity: 0;
+  clear: both;
 }

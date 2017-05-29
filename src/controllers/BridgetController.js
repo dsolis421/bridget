@@ -1,6 +1,11 @@
 app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $rootScope) {
   $scope.greeting = "Hi, I\'m Bridget and all I do is budget! How can I help you today?";
   $scope.face = 'img/bettie_normal.png';
+  $scope.appchoices = {
+    type: 'select',
+    value: 'How can I help you today?',
+    choices: ['How can I help you today?','Calculate Monthly Budget','Estimate Mortgage Payment']
+  };
   $scope.looks = {
     angry: 'img/bettie_angry.png',
     concerned: 'img/bettie_concerned.png',
