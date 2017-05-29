@@ -1,5 +1,5 @@
 app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $rootScope) {
-  $scope.greeting = "Hi, I\'m Bridget and all I do is budget! How can I help you today?";
+  $scope.greeting = "Hi, I\'m Bridget and all I do is budget!";
   $scope.face = 'img/bettie_normal.png';
   $scope.appchoices = {
     type: 'select',
@@ -54,5 +54,13 @@ app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $r
     $rootScope.budget = false;
     $rootScope.mortgage = true;
     $scope.updateBridget('normal_smile','mortgage_response');
+  };
+  $scope.changeBridget = function() {
+    console.log('changeBridget fired');
+    if($scope.appchoices.value === 'Estimate Mortgage Payment') {
+      $scope.showMortgage();
+    } else {
+      return;
+    }
   };
 }]);

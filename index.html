@@ -29,12 +29,16 @@
               <div class="bridget-talk">
                 <span>{{ greeting }}</span>
                 <div class="bridget-act">
-                  <div ng-click="showBudget()">
+                  <!--<div ng-click="showBudget()">
                     Calculate Monthly Budget
                   </div>
                   <div ng-click="showMortgage()">
                     Estimate Mortgage Payment
-                  </div>
+                  </div>-->
+                  <select ng-model="appchoices.value"
+                    ng-options="x for x in appchoices.choices"
+                    ng-change="changeBridget()">
+                  </select>
                 </div>
               </div>
             </figcaption>

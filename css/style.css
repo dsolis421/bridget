@@ -43,7 +43,7 @@ figcaption {
 .bridget-act {
   margin: 10px auto 0 auto;
 }
-.bridget-act > div {
+.bridget-act > div, select {
   cursor: pointer;
   height: auto;
   width: 300px;
