@@ -43,15 +43,22 @@ figcaption {
 .bridget-act {
   margin: 10px auto 0 auto;
 }
-.bridget-act > div, select {
+.bridget-act > div, select, #add-debt, #add-income {
   cursor: pointer;
   height: auto;
   width: 300px;
   padding: 5px;
   margin: 3px auto;
-  background: #A83C25;
+  color: white;
   text-align: center;
   font-size: 18px;
+}
+.bridget-act > div, select, #add-debt {
+  background: #A83C25;
+}
+#add-income {
+  background: #5F8528;
+  margin-bottom: 20px;
 }
 .bridget-reply {
   width: 100%;
@@ -82,6 +89,14 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
+input[name=incomedesc], input[name=debtdesc] {
+  width: 60%;
+  display: inline-block;
+}
+input[name=incomeamount], input[name=debtamount] {
+  width: 38%;
+  display: inline-block;
+}
 .app-main p:first-of-type {
   margin-top: 15px;
 }
@@ -89,6 +104,15 @@ input[type=number]::-webkit-outer-spin-button {
   text-decoration: underline;
   color: #A83C25;
   font-weight: bold;
+}
+#calc-budget {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #C66854;
+  color: white;
+  text-align: center;
+  margin: 30px auto 15px auto;
 }
 .clearfix:after {
   content: "";

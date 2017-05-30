@@ -56,9 +56,10 @@ app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $r
     $scope.updateBridget('normal_smile','mortgage_response');
   };
   $scope.changeBridget = function() {
-    console.log('changeBridget fired');
     if($scope.appchoices.value === 'Estimate Mortgage Payment') {
       $scope.showMortgage();
+    } else if ($scope.appchoices.value === 'Calculate Monthly Budget'){
+      $scope.showBudget();
     } else {
       return;
     }
