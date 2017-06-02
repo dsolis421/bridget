@@ -56,42 +56,40 @@
             <input type="text"
               placeholder="Description..."
               maxlength="20"
-              name="incomedesc"
-              ng-model="incomedesc"/>
+              name="budgetdesc"
+              ng-model="budgetdesc"/>
             <input type="number"
               placeholder=0.00
-              name="incomeamount"
-              ng-model="incomeamount"/>
+              name="budgetamount"
+              ng-model="budgetamount"/>
           </form>
           <div id="add-income"ng-click="addToIncome()">
             Add to Income
           </div>
-          <form>
-            <input type="text"
-              placeholder="Description..."
-              maxlength="20"
-              name="debtdesc"
-              ng-model="debtdesc"/>
-            <input type="number"
-              placeholder=0.00
-              name="debtamount"
-              ng-model="debtamount"/>
-          </form>
           <div id="add-debt" ng-click="addToDebt()">
             Add to Debt
           </div>
-          <div id="calc-budget" ng-click="calcDebtToIncome()">
+          <div id="calc-budget" ng-click="handleBudget()">
             Calculate Budget
           </div>
-          <h3>Your debt to income ratio is {{ ratio }}</h3>
-          <h3></h3>
-          <div class="income-entry" ng-repeat="(key, value) in income">
-            {{ value.description }}: {{ value.amount | currency }}
-            <span>Remove</span>
+          <div ng-if="ratio">
+            <p>Your debt to income ratio is {{ ratio }}%</p>
+            <p>You disposable income is {{ disposable | currency }}.</p>
+            <p>
+              {{ analysis_response }}
+            </p>
           </div>
-          <div class="income-entry" ng-repeat="(key, value) in debt">
+          <div class="income-entry" ng-repeat="(key, value) in income track by $index">
             {{ value.description }}: {{ value.amount | currency }}
-            <span>Remove</span>
+            <div ng-click="removeIncome($index)">
+              <i class="fa fa-times-rectangle-o"></i>
+            </div>
+          </div>
+          <div class="debt-entry" ng-repeat="(key, value) in debt">
+            {{ value.description }}: {{ value.amount | currency }}
+            <div ng-click="removeDebt($index)">
+              <i class="fa fa-times-rectangle-o"></i>
+            </div>
           </div>
         </div>
         <div ng-if="$root.mortgage" ng-controller="MortgageController">

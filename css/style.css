@@ -58,7 +58,7 @@ figcaption {
 }
 #add-income {
   background: #5F8528;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .bridget-reply {
   width: 100%;
@@ -89,11 +89,11 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-input[name=incomedesc], input[name=debtdesc] {
+input[name=budgetdesc] {
   width: 60%;
   display: inline-block;
 }
-input[name=incomeamount], input[name=debtamount] {
+input[name=budgetamount] {
   width: 38%;
   display: inline-block;
 }
@@ -113,6 +113,32 @@ input[name=incomeamount], input[name=debtamount] {
   color: white;
   text-align: center;
   margin: 30px auto 15px auto;
+}
+.income-entry, .debt-entry {
+  width: 300px;
+  height: auto;
+  padding: 5px;
+  margin: 3px auto;
+  color: white;
+  text-transform: capitalize;
+}
+.income-entry {
+  background: #5F8528;
+}
+.debt-entry {
+  background: #A83C25;
+}
+.income-entry > div, .debt-entry > div {
+  float: right;
+  width: 30px;
+  height: 100%;
+  cursor: pointer;
+}
+.income-entry > div {
+  color: #8bc43b;
+}
+.debt-entry > div {
+  color: #C66854;
 }
 .clearfix:after {
   content: "";
