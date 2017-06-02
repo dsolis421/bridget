@@ -14,12 +14,12 @@ app.controller('BridgetController', ['$scope', '$rootScope', function($scope, $r
     sad: 'img/bettie_sad.png',
     shocked: 'img/bettie_shocked.png',
     smile: 'img/bettie_smile.png',
-    talk_left: 'img/bettie_talk_left',
-    talk_right: 'img/bettie_talk_right',
-    thinking_left: 'img/bettie_thinking_left',
-    thinking_right: 'img/bettie_thinking_right',
-    tilt_left: 'img/bettie_tilt_left',
-    tilt_right: 'img/bettie_tilt_right'
+    talk_left: 'img/bettie_talk_left.png',
+    talk_right: 'img/bettie_talk_right.png',
+    thinking_left: 'img/bettie_thinking_left.png',
+    thinking_right: 'img/bettie_thinking_right.png',
+    tilt_left: 'img/bettie_tilt_left.png',
+    tilt_right: 'img/bettie_tilt_right.png'
   };
   $scope.responses = {
     helpful_affirm: "Sure, I can do that!",
