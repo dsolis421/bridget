@@ -146,3 +146,15 @@ input[name=budgetamount] {
   opacity: 0;
   clear: both;
 }
+@media screen and (max-width: 799px) {
+  body {
+    width: 100vw;
+  }
+  figure, .app-main {
+    width: 100%;
+    float: none;
+    background-image: url('img/bettie_normal.png');
+    background-position: center;
+    background-size: cover;
+  }
+}

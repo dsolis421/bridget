@@ -35,16 +35,16 @@
                 </div>
               </div>
             </figcaption>
-            <div class="bridget-reply">
+            <div class="bridget-reply" ng-click="updateBridget('tilt_left','yourewelcome')">
               Thank You, Bridget
             </div>
-            <div class="bridget-reply">
+            <div class="bridget-reply" ng-click="updateBridget('concerned','sure')">
               Are you sure?
             </div>
-            <div class="bridget-reply">
+            <div class="bridget-reply" ng-click="updateBridget('angry','sarcastic_negative')">
               I think you're wrong
             </div>
-            <div class="bridget-reply">
+            <div class="bridget-reply" ng-click="showAbout()">
               Tell me about yourself
             </div>
         </figure>
@@ -115,18 +115,38 @@
               ng-model="term"
               ng-change="mortgageChange()"
               placeholder=30 />
-            <div ng-if="payment">
-              <p>
-                I estimate your monthly mortgage payment to be <span>{{ payment | currency }}</span>.  This includes
-                principal and interest.  Keep in mind, your payment can increase depending on insurance premiums,
-                HOA fees, and property taxes.
-              </p>
-              <p>
-                You can decrease your mortage payment with a sizeable down payment.  Improving your credit can also decrease
-                your payment by helping you qualify for a lower rate.
-              </p>
-            </div>
           </form>
+          <div ng-if="payment">
+            <p>
+              I estimate your monthly mortgage payment to be <span>{{ payment | currency }}</span>.  This includes
+              principal and interest.  Keep in mind, your payment can increase depending on insurance premiums,
+              HOA fees, and property taxes.
+            </p>
+            <p>
+              You can decrease your mortage payment with a sizeable down payment.  Improving your credit can also decrease
+              your payment by helping you qualify for a lower rate.
+            </p>
+          </div>
+        </div>
+        <div ng-if="$root.about">
+          <p>
+            Well, my name is Bridget and I'm a financial super-freak!
+          </p>
+          <p>
+            I'm a single page web app written in <a href="https://angularjs.org/" target="_blank">AngularJS</a>. It's a JavaScript
+            library that allows me to dynamically display content. I can be interactive, fast, and flexible.
+          </p>
+          <p>
+            If you're nerdy, you can check out my code in this <a href="https://github.com/dsolis421/bridget" target="_blank">GitHub repository</a>. I'm a work in progress, so
+            my code is sure to get more efficient as time goes by.
+          </p>
+          <p>
+            I currently serve up calculations for a monthly budget and an estimated mortgage payment. I hope to expand my
+            functionality to include credit card payoff, stock gains/losses, and maybe even 401k estimates.
+          </p>
+          <p>
+            Take care and save for a rainy day!
+          </p>
         </div>
       </div>
     </section>
