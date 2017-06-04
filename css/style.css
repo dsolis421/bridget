@@ -153,8 +153,11 @@ input[name=budgetamount] {
   figure, .app-main {
     width: 100%;
     float: none;
-    background-image: url('img/bettie_normal.png');
-    background-position: center;
-    background-size: cover;
   }
+  figure img {
+    max-width: 100vw;
+    display: block;
+    margin: 0 auto;
+  }
+  
 }
