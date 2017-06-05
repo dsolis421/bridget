@@ -146,6 +146,20 @@ input[name=budgetamount] {
   opacity: 0;
   clear: both;
 }
+footer {
+  background: #5F8528;
+  color: white;
+  width: 100%;
+  height: auto;
+  padding: 20px 5px;
+  text-align: center;
+}
+footer a {
+  color: white;
+}
+footer a:hover {
+  color: #ffcc66;
+}
 @media screen and (max-width: 799px) {
   body {
     width: 100vw;
@@ -159,5 +173,5 @@ input[name=budgetamount] {
     display: block;
     margin: 0 auto;
   }
-  
+
 }
